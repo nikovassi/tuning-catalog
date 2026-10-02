@@ -1,0 +1,93 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/inter-tight';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Две отделни цветови системи — не инверсия. Стойностите са RGB триплети. */
+@layer base {
+  :root {
+    color-scheme: light;
+    --bg: 246 246 244;
+    --surface: 255 255 255;
+    --surface-2: 238 238 235;
+    --line: 224 224 220;
+    --line-strong: 200 200 195;
+    --fg: 18 19 21;
+    --muted: 88 92 99;
+    --subtle: 128 132 139;
+    --accent: 234 88 12;
+    --accent-fg: 255 255 255;
+    --accent-text: 179 60 6;
+    --inverse: 18 19 21;
+    --inverse-fg: 246 246 244;
+    --success: 21 128 61;
+    --danger: 185 28 28;
+    --shadow: 20 22 26;
+    --grid: 18 19 21;
+    --panel: 18 19 21;
+    --panel-line: 18 19 21;
+  }
+  [data-theme='dark'] {
+    color-scheme: dark;
+    --bg: 11 12 14;
+    --surface: 19 21 24;
+    --surface-2: 27 29 33;
+    --line: 38 41 46;
+    --line-strong: 58 62 69;
+    --fg: 236 237 239;
+    --muted: 158 163 171;
+    --subtle: 112 118 127;
+    --accent: 249 115 22;
+    --accent-fg: 12 12 12;
+    --accent-text: 251 146 60;
+    --inverse: 236 237 239;
+    --inverse-fg: 11 12 14;
+    --success: 74 222 128;
+    --danger: 248 113 113;
+    --shadow: 0 0 0;
+    --grid: 236 237 239;
+    --panel: 24 26 30;
+    --panel-line: 46 49 55;
+  }
+
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: 5rem; }
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { @apply font-display tracking-tight; text-wrap: balance; }
+  ::selection { background: rgb(var(--accent) / 0.25); }
+  :focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 2px; border-radius: 6px; }
+  img { @apply select-none; }
+}
+
+@layer components {
+  .eyebrow { @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-subtle; }
+  .card { @apply rounded-2xl border border-line bg-surface shadow-card; }
+  .input {
+    @apply h-11 w-full rounded-xl border border-line bg-surface px-3.5 text-[15px] text-fg placeholder:text-subtle
+      transition-colors hover:border-line-strong focus:border-fg/40 focus:outline-none focus:ring-2 focus:ring-accent/25;
+  }
+  .tech-grid {
+    background-image:
+      linear-gradient(rgb(var(--grid) / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--grid) / 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  /* Графитен акцентен панел — тъмен и в двете теми (не се инвертира) */
+  .panel-strong { background: rgb(var(--panel)); color: rgb(240 240 238); border: 1px solid rgb(var(--panel-line)); }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
