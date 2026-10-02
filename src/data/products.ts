@@ -8,13 +8,13 @@ import type { Product, ProductImage } from '../types/catalog';
  * Нищо не е добавено извън тях. Наличност и OEM номера не са посочени в обявите,
  * затова липсват. „Тип VDO“ означава стил на уреда, а не марка.
  *
- * Снимките са в public/products/<slug>/ (виж scripts/import-images.py).
+ * Снимките са в public/images/products/<slug>/ (виж scripts/import-images.py).
  * Как да добавите продукт — виж README.md → „Добавяне на продукти“.
  */
 
 const gallery = (slug: string, count: number, alt: string): ProductImage[] =>
   Array.from({ length: count }, (_, i) => ({
-    src: `products/${slug}/${String(i + 1).padStart(2, '0')}.webp`,
+    src: `images/products/${slug}/${String(i + 1).padStart(2, '0')}.webp`,
     alt: i === 0 ? alt : `${alt} — снимка ${i + 1}`,
   }));
 

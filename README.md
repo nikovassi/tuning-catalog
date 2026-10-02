@@ -98,7 +98,7 @@ src/
   subcategory: 'kolyana',                  // по избор
   shortDescription: '…',
   description: '…',
-  images: [{ src: 'products/p-0001-1.webp', alt: '…' }],   // файлове в public/products/
+  images: [{ src: 'images/products/p-0001/01.webp', alt: '…' }],   // файлове в public/images/products/
   sku: '…',                                // по избор
   price: 49.9, currency: 'EUR',            // САМО ако има реална цена
   availability: 'in_stock',                // САМО ако има реални данни
@@ -194,7 +194,7 @@ src/
 
 Попълнете тези данни (търсете `TODO(данни)` в кода):
 
-- [x] **Продукти** — 10 продукта от OLX (`src/data/products.ts`); снимки в `public/products/` (`scripts/import-images.py`)
+- [x] **Продукти** — 10 продукта от OLX (`src/data/products.ts`); снимки в `public/images/products/` (`scripts/import-images.py`)
 - [ ] **Наличности, кодове на продуктите, съвместимост с автомобили** — не са посочени в обявите
 - [ ] **Марки** на уредите, които не са Greddy (по снимките: Dragon Gauge, CRSPEED?) — да се потвърдят
 - [ ] Лого на Greddy и други марки (`public/brands/`)

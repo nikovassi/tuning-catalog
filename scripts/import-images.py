@@ -1,11 +1,11 @@
-"""Сваля снимките на продуктите (оригиналния източник) и ги записва като WebP в public/products/<slug>/.
+"""Сваля снимките на продуктите (оригиналния източник) и ги записва като WebP в public/images/products/<slug>/.
 Употреба: python3 scripts/import-images.py scripts/product-images.json"""
 import io, json, os, sys, urllib.request
 from PIL import Image
 
 src = json.load(open(sys.argv[1]))
 for slug, urls in src.items():
-    out = os.path.join('public', 'products', slug)
+    out = os.path.join('public', 'images', 'products', slug)
     os.makedirs(out, exist_ok=True)
     for i, u in enumerate(urls, 1):
         dst = os.path.join(out, f'{i:02d}.webp')
