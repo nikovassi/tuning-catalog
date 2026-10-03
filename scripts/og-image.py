@@ -2,7 +2,7 @@
 import math, sys
 from PIL import Image, ImageDraw, ImageFont
 
-name = sys.argv[1] if len(sys.argv) > 1 else 'Tuning Catalog'
+name = sys.argv[1] if len(sys.argv) > 1 else 'ENERGON 07'
 W, H = 1200, 630
 img = Image.new('RGB', (W, H), (11, 12, 14))
 d = ImageDraw.Draw(img)

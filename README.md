@@ -1,6 +1,8 @@
-# Tuning Catalog
+# ENERGON 07 — тунинг каталог
 
-Модерен продуктов каталог за автомобилни тунинг продукти и аксесоари.
+Продуктов каталог за автомобилни тунинг продукти и аксесоари на **ENERGON 07** (ЕНЕРГОН 07 ЕООД, Стара Загора) — https://energon07.com
+
+На живо: https://nikovassi.github.io/tuning-catalog/
 React + TypeScript + Vite + Tailwind CSS + Lucide. Статичен сайт, готов за GitHub Pages и подготвен за бъдещ CMS/backend.
 
 > **Данни:** 10 реални продукта от обявите в OLX.bg, изпратени от Александър Андонов (02.10.2026).
@@ -199,9 +201,11 @@ src/
 - [ ] **Марки** на уредите, които не са Greddy (по снимките: Dragon Gauge, CRSPEED?) — да се потвърдят
 - [ ] Лого на Greddy и други марки (`public/brands/`)
 - [ ] **Реални категории** — потвърждение или корекция на структурата (`src/data/categories.ts`)
-- [ ] **Име и лого на бизнеса** (върху снимките има воден знак „@AndonovTuning shop“) (`src/config/site.ts`, `src/components/layout/Logo.tsx`, `public/favicon.svg`)
-- [ ] **Контакти** — телефон, email, адрес, работно време, Facebook/Instagram (`src/config/site.ts`)
+- [x] **Име на бизнеса** — ENERGON 07 (`src/config/site.ts`)
+- [ ] Лого на ENERGON 07 във векторен формат (на energon07.com има само PNG 300×75) (`src/config/site.ts`, `src/components/layout/Logo.tsx`, `public/favicon.svg`)
+- [x] **Контакти** — телефон, email, Facebook, седалище (от energon07.com)
+- [ ] Точен адрес, работно време, ЕИК — не са публикувани на energon07.com
 - [ ] **Фирмени данни** за правните страници (ЕИК, адрес) и **преглед от юрист**
-- [ ] **Текст „За нас“** (`src/pages/AboutPage.tsx`, секцията на началната страница)
+- [x] **Текст „За нас“** — по energon07.com
 - [ ] **Endpoint за запитвания** (`VITE_INQUIRY_ENDPOINT`)
 - [ ] ЧЗВ за доставка, плащане, гаранция и връщане — **само при реални условия**

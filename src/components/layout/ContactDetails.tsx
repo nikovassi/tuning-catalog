@@ -1,4 +1,4 @@
-import { Clock, Facebook, Globe, Instagram, Mail, MapPin, Phone, Youtube } from 'lucide-react';
+import { Clock, ExternalLink, Facebook, Globe, Instagram, Mail, MapPin, Phone, Youtube } from 'lucide-react';
 import { site } from '../../config/site';
 
 const socialIcon = { facebook: Facebook, instagram: Instagram, youtube: Youtube, tiktok: Globe, other: Globe };
@@ -39,7 +39,10 @@ export function ContactDetails({ variant = 'list' }: { variant?: 'list' | 'cards
       {address && (
         <div className={item}>
           <span className={icon}><MapPin className="h-4 w-4" aria-hidden /></span>
-          <div><p className="eyebrow mb-1">Адрес</p><p className="font-medium">{address.street}, {address.postalCode} {address.city}</p></div>
+          <div>
+            <p className="eyebrow mb-1">{address.label ?? 'Адрес'}</p>
+            <p className="font-medium">{[address.street, [address.postalCode, `гр. ${address.city}`].filter(Boolean).join(' ')].filter(Boolean).join(', ')}</p>
+          </div>
         </div>
       )}
       {hours && hours.length > 0 && (
@@ -48,6 +51,17 @@ export function ContactDetails({ variant = 'list' }: { variant?: 'list' | 'cards
           <div>
             <p className="eyebrow mb-1">Работно време</p>
             {hours.map((h) => <p key={h.days}><span className="text-muted">{h.days}:</span> <span className="font-medium">{h.time}</span></p>)}
+          </div>
+        </div>
+      )}
+      {site.company?.website && (
+        <div className={item}>
+          <span className={icon}><Globe className="h-4 w-4" aria-hidden /></span>
+          <div>
+            <p className="eyebrow mb-1">Онлайн магазин</p>
+            <a href={site.company.website.url} target="_blank" rel="noopener" className="inline-flex items-center gap-1 font-medium hover:text-accent-text">
+              {site.company.website.label} <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+            </a>
           </div>
         </div>
       )}

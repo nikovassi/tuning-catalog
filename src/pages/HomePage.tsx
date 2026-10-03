@@ -152,13 +152,12 @@ export function HomePage() {
         <div className="grid gap-8 rounded-3xl border border-line bg-surface p-6 sm:p-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="eyebrow">За нас</p>
-            <h2 id="h-about" className="mt-3 text-2xl font-semibold sm:text-3xl">Тунинг продукти, подбрани с внимание към детайла</h2>
+            <h2 id="h-about" className="mt-3 text-2xl font-semibold sm:text-3xl">Тунинг каталогът на {site.name} от Стара Загора</h2>
           </div>
           <div className="flex flex-col justify-between gap-6">
-            {/* TODO(данни): кратко реално представяне на бизнеса */}
             <p className="text-[15px] leading-relaxed text-muted">
-              Каталогът събира продукти и аксесоари за автомобилен тунинг на едно място — подредени по категории,
-              марки и съвместимост, за да намерите нужното без излишно търсене.
+              {site.company?.legalName ?? site.name} изгражда системи за зелена енергия и продава компоненти вече над 13 години.
+              Тук сме събрали тунинг продуктите и аксесоарите за автомобили — подредени по категории, с цени и директно запитване.
             </p>
             <ButtonLink to={routes.about} variant="secondary" className="self-start">Повече за нас <ArrowRight className="h-4 w-4" /></ButtonLink>
           </div>

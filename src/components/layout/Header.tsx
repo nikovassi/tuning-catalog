@@ -1,4 +1,5 @@
-import { ArrowRight, Menu, Search } from 'lucide-react';
+import { ArrowRight, ExternalLink, Menu, Search } from 'lucide-react';
+import { site } from '../../config/site';
 import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { getCategories } from '../../lib/catalog';
@@ -102,6 +103,11 @@ export function Header() {
           </div>
           <div className="mt-auto border-t border-line p-5">
             <Button variant="primary" size="lg" className="w-full" onClick={() => { setMenu(false); openInquiry(); }}>Изпрати запитване</Button>
+            {site.company?.website && (
+              <a href={site.company.website.url} target="_blank" rel="noopener" className="mt-3 flex items-center justify-center gap-1.5 text-[13px] font-medium text-muted hover:text-fg">
+                Онлайн магазин {site.company.website.label} <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+              </a>
+            )}
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1">
               {legalNav.map((l) => <NavLink key={l.to} to={l.to} className="text-[12px] text-subtle hover:text-fg">{l.label}</NavLink>)}
             </div>
